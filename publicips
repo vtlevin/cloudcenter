@@ -1,0 +1,17 @@
+    export CliqrTier_siwapp_haproxy_db_PUBLIC_IP=$CliqrTier_siwapp_haproxy_db_IP
+    export CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP
+    export CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
+
+    export CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
+    export CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
+    export cliqrNodePublicIp=$cliqrNodePrivateIp
+
+    echo "export CliqrTier_siwapp_haproxy_db_PUBLIC_IP=$CliqrTier_siwapp_haproxy_db_IP" >> /usr/local/osmosix/etc/myuserenv
+    echo "export CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP" >> /usr/local/osmosix/etc/myuserenv
+    echo "export CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP"  >> /usr/local/osmosix/etc/myuserenv
+
+    echo "export CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP"  >> /usr/local/osmosix/etc/myuserenv
+    echo "export CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP" >> /usr/local/osmosix/etc/myuserenv
+    echo "export cliqrNodePublicIp=$cliqrNodePrivateIp" >> /usr/local/osmosix/etc/myuserenv
+
+    
