@@ -212,7 +212,7 @@ if [ "${master}" == "${cliqrNodeId}" ]; then
     sudo galera_new_cluster
     #Download and restore old database
     agentSendLogMessage "Downloading SQL file and restoring database."
-    curl -o /tmp/siwapp.sql https://raw.githubusercontent.com/datacenter/cloudcenter-content/master/apps/siwapp/siwapp.sql
+    curl -o /tmp/siwapp.sql https://raw.githubusercontent.com/vtlevin/cloudcenter/master/siwapp.sql
     sudo su -c "mysql -u root -p'${GALERA_DB_ROOT_PWD}' < /tmp/siwapp.sql"
     sudo su -c "mysql -u root -p'${GALERA_DB_ROOT_PWD}' -e 'CREATE USER haproxy; FLUSH PRIVILEGES;'"
 
