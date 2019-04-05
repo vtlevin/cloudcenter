@@ -10,13 +10,9 @@ exec > >(tee -a /var/tmp/load-simulator-node-init_$$.log) 2>&1
 cloudType=`cat /usr/local/osmosix/etc/cloud`
 if [ $cloudType == 'vmware' ]
 then
-    export CliqrTier_siwapp_haproxy_db_PUBLIC_IP=$CliqrTier_siwapp_haproxy_db_IP
-    export CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP
-    export CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
-
-    export CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
-    export CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
-    export cliqrNodePublicIp=$cliqrNodePrivateIp
+    wget https://github.com/vtlevin/cloudcenter/edit/master/publicips
+    chmod +x publicips
+    . publicips
 fi
 
 sudo mv /etc/yum.repos.d/cliqr.repo ~
