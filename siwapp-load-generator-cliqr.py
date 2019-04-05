@@ -13,11 +13,13 @@ import time
 import requests
 from lxml import html
 
-environment_variables = get_cliqr_env_variables(['CliqrTier_siwapp_app_HOSTNAME','CliqrTier_siwapp_haproxy_app_PUBLIC_IP'])
+#environment_variables = get_cliqr_env_variables(['CliqrTier_siwapp_app_HOSTNAME','CliqrTier_siwapp_haproxy_app_PUBLIC_IP'])
+environment_variables = get_cliqr_env_variables(['CliqrTier_siwapp_app_HOSTNAME','CliqrTier_siwapp_haproxy_app_IP'])
 print environment_variables
 
 SIWAPP_APP_SERVERS = environment_variables["CliqrTier_siwapp_app_HOSTNAME"].split(',')
-SIWAPP_FRONTEND_PROXY_URL = 'http://' + environment_variables["CliqrTier_siwapp_haproxy_app_PUBLIC_IP"]
+#SIWAPP_FRONTEND_PROXY_URL = 'http://' + environment_variables["CliqrTier_siwapp_haproxy_app_PUBLIC_IP"]
+SIWAPP_FRONTEND_PROXY_URL = 'http://' + environment_variables["CliqrTier_siwapp_haproxy_app_IP"]
 SIWAPP_LOGIN = '/login'
 SIWAPP_PAGES = ['dashboard','invoices','recurring','customers','estimates','products']
 
