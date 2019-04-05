@@ -33,7 +33,7 @@ sudo chown -R apache:apache /var/www/html/
 
 sudo sed -i -e '57,63d' /var/www/html/web/pre_installer_code.php
 
-sudo sed -i "s/80/${siwapp_APP_PORT}/" /etc/httpd/conf/httpd.conf
+sudo sed -i "s/80/8443/" /etc/httpd/conf/httpd.conf
 sudo sed -i "s/LogFormat \"%h/LogFormat \"%a/g" /etc/httpd/conf/httpd.conf
 
 sudo sed -i "21s%.*%${cliqrNodeHostname}%g" /var/www/html/apps/siwapp/templates/layout.php
@@ -42,7 +42,7 @@ sudo su -c "echo $'<Directory /var/www/html/web>
 	Options FollowSymLinks
 	AllowOverride All
 </Directory>
-<VirtualHost *:${siwapp_APP_PORT}>
+<VirtualHost *:8443>
 	DocumentRoot /var/www/html/web
 	RewriteEngine On
 </VirtualHost>'\
@@ -54,16 +54,17 @@ all:
     class: sfDoctrineDatabase
     param:
       dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_PUBLIC_IP};dbname=siwapp'
-      username: '${GALERA_DB_USER}'
-      password: '${GALERA_DB_USER_PWD}'
+      username: 'siwapp'
+      password: '!Ciscodc123'
 
 test:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_PUBLIC_IP};dbname=siwapp_test'
-      username: '${GALERA_DB_USER}'
-      password: '${GALERA_DB_USER_PWD}'
+      #dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_PUBLIC_IP};dbname=siwapp_test'
+      dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_IP};dbname=siwapp_test'
+      username: 'siwapp'
+      password: '!Ciscodc123'
 EOF
 "
 
