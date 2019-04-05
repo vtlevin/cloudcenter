@@ -31,7 +31,7 @@ sudo systemctl start mariadb
 
 # mysql secure installation
 CURRENT_MYSQL_PASSWORD=''
-NEW_MYSQL_PASSWORD="${GALERA_DB_ROOT_PWD}"
+NEW_MYSQL_PASSWORD="!Ciscodc123"
 
 SECURE_MYSQL=$(sudo expect -c "
 
@@ -69,11 +69,11 @@ expect eof
 echo "${SECURE_MYSQL}"
 
 # create galera db user and privs
-mysql -u root -p$GALERA_DB_ROOT_PWD <<-EOF
+mysql -u root -p!Ciscodc123 <<-EOF
 DELETE FROM mysql.user WHERE User='';
-GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '$GALERA_DB_ROOT_PWD';
-GRANT USAGE ON *.* to $GALERA_DB_USER@'%' IDENTIFIED BY '$GALERA_DB_USER_PWD';
-GRANT ALL PRIVILEGES on *.* to $GALERA_DB_USER@'%';
+GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '!Ciscodc123';
+GRANT USAGE ON *.* to siwapp@'%' IDENTIFIED BY '!Ciscodc123';
+GRANT ALL PRIVILEGES on *.* to siwapp@'%';
 FLUSH PRIVILEGES;
 EOF
 
@@ -215,8 +215,8 @@ if [ "${master}" == "${cliqrNodeId}" ]; then
     #Download and restore old database
     agentSendLogMessage "Downloading SQL file and restoring database."
     curl -o /tmp/siwapp.sql https://raw.githubusercontent.com/vtlevin/cloudcenter/master/siwapp.sql
-    sudo su -c "mysql -u root -p'${GALERA_DB_ROOT_PWD}' < /tmp/siwapp.sql"
-    sudo su -c "mysql -u root -p'${GALERA_DB_ROOT_PWD}' -e 'CREATE USER haproxy; FLUSH PRIVILEGES;'"
+    sudo su -c "mysql -u root -p'!Ciscodc123' < /tmp/siwapp.sql"
+    sudo su -c "mysql -u root -p'!Ciscodc123' -e 'CREATE USER haproxy; FLUSH PRIVILEGES;'"
 
 else
     agentSendLogMessage  "Waiting for master node to be initialized..."
@@ -226,7 +226,7 @@ else
     ERR=0
 
     # Keep checking for port 3306 on the master to be open
-    until $(mysql -h $master_addr -u root -p"${GALERA_DB_ROOT_PWD}" -e ""); do
+    until $(mysql -h $master_addr -u root -p"!Ciscodc123" -e ""); do
       sleep ${SLEEP_TIME}
       let "COUNT++"
       echo ${COUNT}
