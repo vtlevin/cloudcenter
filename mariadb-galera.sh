@@ -197,7 +197,7 @@ wsrep_slave_threads            = 4
 innodb-flush-log-at-trx-commit = 2
 # wsrep_cluster_address          = 'gcomm://${CliqrTier_siwapp_mariadb_PUBLIC_IP}'
 wsrep_cluster_address          = 'gcomm://${CliqrTier_siwapp_mariadb_IP}'
-wsrep_cluster_name             = '${GALERA_CLUSTER_NAME}'
+wsrep_cluster_name             = siwapp
 wsrep_node_address             = '${my_addr}'
 wsrep_node_name                = '${cliqrNodeHostname}'
 
