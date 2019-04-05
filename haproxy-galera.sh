@@ -28,7 +28,8 @@ option mysql-check user haproxy
 temp_ifs=${IFS}
 IFS=','
 # nodeArr=(${CliqrTier_siwapp_mariadb_NODE_ID}) # Array of nodes in my tier.
-ipArr=(${CliqrTier_siwapp_mariadb_PUBLIC_IP}) # Array of IPs in my tier.
+# ipArr=(${CliqrTier_siwapp_mariadb_PUBLIC_IP}) # Array of IPs in my tier.
+ipArr=(${CliqrTier_siwapp_mariadb_IP})
 
 # Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
 host_index=0
