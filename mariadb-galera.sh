@@ -91,7 +91,8 @@ sudo firewall-cmd --reload
 temp_ifs=${IFS}
 IFS=','
 nodeArr=(${CliqrTier_siwapp_mariadb_NODE_ID}) # Array of nodes in my tier.
-ipArr=(${CliqrTier_siwapp_mariadb_PUBLIC_IP}) # Array of IPs in my tier.
+# ipArr=(${CliqrTier_siwapp_mariadb_PUBLIC_IP}) # Array of IPs in my tier.
+ipArr=(${CliqrTier_siwapp_mariadb_IP}) # Array of IPs in my tier.
 master=${nodeArr[0]} # Let the first node in the service tier be the master.
 master_addr=${ipArr[0]} # Let the first node in the service tier be the master.
 
