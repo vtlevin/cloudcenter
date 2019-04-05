@@ -207,7 +207,7 @@ EOF
 "
 
 
-if [ "${master_add}" == "${cliqrNodePrivateIp}" ]; then
+if [ "${master_addr}" == "${cliqrNodePrivateIp}" ]; then
     # I'm the master
     agentSendLogMessage "Master"
     agentSendLogMessage "Initializing master..."
