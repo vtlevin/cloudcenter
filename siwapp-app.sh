@@ -21,6 +21,20 @@ then
     cliqrNodePublicIp=$cliqrNodePrivateIp    
 fi
 
+# Set internal separator to ',' since they're comma-delimited lists.
+temp_ifs=${IFS}
+IFS=','
+ipArr=(${CliqrTier_siwapp_haproxy_db_PUBLIC_IP}) # Array of IPs in my tier.
+
+# Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
+host_index=0
+for host in $CliqrTier_siwapp_haproxy_db_HOSTNAME ; do
+    sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
+    let host_index=${host_index}+1
+done
+# Set internal separator back to original.
+IFS=${temp_ifs}
+
 # agentSendLogMessage $(env)
 
 #---------Script Variables------------#
