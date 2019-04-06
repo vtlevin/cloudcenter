@@ -34,7 +34,7 @@ sudo su -c 'echo "
 #---------------------------------------------------------------------
 frontend  http_in
         mode http
-        bind *:80
+        bind *:8443
         default_backend siwapp_apps
 #---------------------------------------------------------------------
 # Siwapp App Server Backend
