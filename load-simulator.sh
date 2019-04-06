@@ -51,25 +51,25 @@ sudo yum install -y python-pip
 sudo pip install pip --upgrade
 sudo pip install requests lxml pyping
 
-sudo curl -o /usr/share/systemd/siwapp-load-generator.py https://raw.githubusercontent.com/vtlevin/cloudcenter/master/siwapp-load-generator-cliqr.py
+#sudo curl -o /usr/share/systemd/siwapp-load-generator.py https://raw.githubusercontent.com/vtlevin/cloudcenter/master/siwapp-load-generator-cliqr.py
 
-sudo su -c "echo $'
-[Unit]
-Description=siwapp-simulator
+#sudo su -c "echo $'
+#[Unit]
+#Description=siwapp-simulator
 
-[Service]
-Type=simple
-User=root
-ExecStart=/usr/bin/python /usr/share/systemd/siwapp-load-generator.py
-Restart=on-abort
+#[Service]
+#Type=simple
+#User=root
+#ExecStart=/usr/bin/python /usr/share/systemd/siwapp-load-generator.py
+#Restart=on-abort
 
 
-[Install]
-WantedBy=multi-user.target'\
->> /etc/systemd/system/siwapp-simulator.service
-" 
-sudo systemctl daemon-reload
-sudo systemctl enable siwapp-simulator
-sudo systemctl start siwapp-simulator
+#[Install]
+#WantedBy=multi-user.target'\
+#>> /etc/systemd/system/siwapp-simulator.service
+#" 
+#sudo systemctl daemon-reload
+#sudo systemctl enable siwapp-simulator
+#sudo systemctl start siwapp-simulator
 
-sudo mv ~/cliqr.repo /etc/yum.repos.d/
+#sudo mv ~/cliqr.repo /etc/yum.repos.d/
