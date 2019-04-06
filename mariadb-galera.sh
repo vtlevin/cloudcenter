@@ -10,9 +10,16 @@ exec > >(tee -a /var/tmp/maria-node-init_$$.log) 2>&1
 cloudType=`cat /usr/local/osmosix/etc/cloud`
 if [ $cloudType == 'vmware' ]
 then
-    wget https://github.com/vtlevin/cloudcenter/edit/master/publicips
-    chmod +x publicips
-    . publicips
+#    wget https://github.com/vtlevin/cloudcenter/edit/master/publicips
+#    chmod +x publicips
+#    . publicips
+   CliqrTier_siwapp_haproxy_db_PUBLIC_IP=$CliqrTier_siwapp_haproxy_db_IP
+   CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP
+   CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
+
+   CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
+   CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
+   cliqrNodePublicIp=$cliqrNodePrivateIp
 fi
 
 # agentSendLogMessage $(env)
