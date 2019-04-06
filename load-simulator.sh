@@ -35,6 +35,14 @@ done
 # Set internal separator back to original.
 IFS=${temp_ifs}
 
+host_index=0
+for host in $CliqrTier_siwapp_app_HOSTNAME ; do
+    sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
+    let host_index=${host_index}+1
+done
+# Set internal separator back to original.
+IFS=${temp_ifs}
+
 sudo mv /etc/yum.repos.d/cliqr.repo ~
 
 sudo yum -y update
