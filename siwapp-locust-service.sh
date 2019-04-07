@@ -30,7 +30,7 @@ if [ ${ERR} -ne 0 ]; then
     exit 1
 fi
 
-nohup /home/usr/venv/bin/python /usr/share/venv/bin/locust --locustfile=/usr/share/systemd/siwapp-locust-file.py --host=http://${CliqrTier_siwapp_haproxy_app_IP} &>/dev/null &
+nohup /home/usr/share/venv/bin/python /usr/share/venv/bin/locust --locustfile=/usr/share/systemd/siwapp-locust-file.py --host=http://${CliqrTier_siwapp_haproxy_app_IP} &>/dev/null &
 sleep 5
 nohup curl -X POST -F "locust_count=10" -F "hatch_rate=10" http://localhost:8089/swarm &>/dev/null &
 while :
