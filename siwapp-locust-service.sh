@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+. /usr/local/osmosix/etc/.osmosix.sh
+. /usr/local/osmosix/etc/userenv
+. /usr/local/osmosix/service/utils/cfgutil.sh
+. /usr/local/osmosix/service/utils/agent_util.sh
+
 echo  "Waiting for website to be reachable..."
 COUNT=0
 MAX=100
