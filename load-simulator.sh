@@ -52,7 +52,7 @@ Description=siwapp-simulator
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/bash /etc/systemd/system/siwapp-locust-service.sh
+ExecStart=/usr/bin/bash /usr/share/systemd/siwapp-locust-service.sh
 Restart=on-abort
 
 
