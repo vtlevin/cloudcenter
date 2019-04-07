@@ -15,8 +15,7 @@ ERR=0
 # This command errored out LOCUST_COUNT = 10
 
 # Keep checking for haproxy to give proper 401 return to login
-#Brandon org. code -until [ "$(curl --write-out %{http_code} --silent --output /dev/null ${CliqrTier_siwapp_haproxy_app_IP})" -eq "401" ]; do
-until [ "$(curl --write-out %{http_code} --silent --output /dev/null {{ ${CliqrTier_siwapp_haproxy_app_IP} }})" -eq "401" ]; do    
+until [ "$(curl --write-out %{http_code} --silent --output /dev/null ${CliqrTier_siwapp_haproxy_app_IP})" -eq "401" ]; do
     sleep ${SLEEP_TIME}
     let "COUNT++"
     echo ${COUNT}
