@@ -50,7 +50,7 @@ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 sudo yum -y install yum-utils
 sudo yum-config-manager --enable remi-php56
-sudo yum -y install git httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
+sudo yum -y install git httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-xml php-mbstring
 sudo yum clean all
 
 sudo git clone https://github.com/siwapp/siwapp-sf1.git /var/www/html/
