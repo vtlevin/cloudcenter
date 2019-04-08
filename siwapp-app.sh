@@ -45,7 +45,12 @@ sudo mv /etc/yum.repos.d/cliqr.repo ~
 
 agentSendLogMessage "Starting app install script"
 sudo yum -y update
-sudo yum -y install git httpd php php-mysql php-xml php-mbstring
+#sudo yum -y install git httpd php php-mysql php-xml php-mbstring
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo yum install yum-utils
+sudo yum-config-manager --enable remi-php56
+sudo yum install git httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
 sudo yum clean all
 
 sudo git clone https://github.com/siwapp/siwapp-sf1.git /var/www/html/
