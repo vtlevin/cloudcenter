@@ -90,8 +90,8 @@ test:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      #dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_PUBLIC_IP};dbname=siwapp_test'
-      dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_IP};dbname=siwapp_test'
+      dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_PUBLIC_IP};dbname=siwapp_test'
+      #dsn: 'mysql:host=${CliqrTier_siwapp_haproxy_db_IP};dbname=siwapp_test'
       username: 'siwapp'
       password: '!Ciscodc123'
 EOF
