@@ -13,18 +13,22 @@ then
 #    wget https://github.com/vtlevin/cloudcenter/edit/master/publicips.txt
 #    chmod +x publicips.txt
 #    . publicips.txt
-    CliqrTier_siwapp_haproxy_db_PUBLIC_IP=$CliqrTier_siwapp_haproxy_db_IP
-    CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP
-    CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
-    CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
-    CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
-    cliqrNodePublicIp=$cliqrNodePrivateIp    
+#    CliqrTier_siwapp_haproxy_db_PUBLIC_IP=$CliqrTier_siwapp_haproxy_db_IP
+#    CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP
+#    CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
+#    CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
+#    CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
+#    cliqrNodePublicIp=$cliqrNodePrivateIp 
+
+     ip_list=CliqrTier_${cliqrAppTierName}_IP
+     declare CliqrTier_${cliqrAppTierName}_PUBLIC_IP=${!ip_list}
 fi
 
 # Set internal separator to ',' since they're comma-delimited lists.
 temp_ifs=${IFS}
 IFS=','
 ipArr=(${CliqrTier_siwapp_haproxy_db_PUBLIC_IP}) # Array of IPs in my tier.
+
 
 # Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
 host_index=0
