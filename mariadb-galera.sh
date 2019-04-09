@@ -259,4 +259,6 @@ else
     fi
 fi
 
+sudo yum -y install ipset
+
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
