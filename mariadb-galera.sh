@@ -259,6 +259,9 @@ else
     fi
 fi
 
+agentSendLogMessage "Installing Tet Pre-reqs."
+
 sudo yum -y install ipset
+sudo yum -y install unzip
 
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
