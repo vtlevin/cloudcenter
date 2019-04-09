@@ -20,4 +20,5 @@ AGENT_LOCATION="/opt/appd/php-agent"
 
 APPD_PHP_PATH=/opt/remi/php56/root/bin rpm -i appdynamics-php-agent-4.5.0.0-1.x86_64.rpm
 
-sudo systemctl restart httpd
+sudo systemctl stop httpd
+sudo systemctl start httpd
