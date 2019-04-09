@@ -59,4 +59,8 @@ IFS=${temp_ifs}
 sudo systemctl start haproxy
 sudo systemctl enable haproxy
 
+agentSendLogMessage "Installing ipsets."
+
+sudo yum -y install ipset
+
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
