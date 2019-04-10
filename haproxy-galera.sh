@@ -64,4 +64,7 @@ agentSendLogMessage "Installing Tet Pre-reqs."
 sudo yum -y install ipset
 sudo yum -y install unzip
 
+agentSendLogMessage "Installing Java."
+sudo yum install java-1.8.0-openjdk-headless -y
+
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
