@@ -119,3 +119,5 @@ agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
+
+https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh
