@@ -63,4 +63,7 @@ IFS=${temp_ifs}
 sudo systemctl start haproxy
 sudo systemctl enable haproxy
 
+agentSendLogMessage "Installing Java."
+sudo yum install java-1.8.0-openjdk-headless -y
+
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
