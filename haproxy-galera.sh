@@ -59,13 +59,13 @@ IFS=${temp_ifs}
 sudo systemctl start haproxy
 sudo systemctl enable haproxy
 
+agentSendLogMessage "Installing Java."
+sudo yum install java-1.8.0-openjdk-headless -y
+
 agentSendLogMessage "Installing Tet Pre-reqs."
 
 sudo yum -y install ipset
 sudo yum -y install unzip
-
-agentSendLogMessage "Installing Java."
-sudo yum install java-1.8.0-openjdk-headless -y
 
 agentSendLogMessage "Install Tetration Agent"
 # Get Tet Script
