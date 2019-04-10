@@ -81,6 +81,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable siwapp-simulator
 sudo systemctl start siwapp-simulator
 
+echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/hosts
+
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
