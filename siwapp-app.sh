@@ -118,6 +118,11 @@ agentSendLogMessage "App install script complete"
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
+agentSendLogMessage "Installing Tet Pre-reqs."
+
+sudo yum -y install ipset
+sudo yum -y install unzip
+
 agentSendLogMessage "Install Tetration Agent"
 # Get Tet Script
 curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
