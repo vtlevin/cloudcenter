@@ -2,8 +2,6 @@
 
 agentSendLogMessage "Install AppD PHP-Agent"
 
-curl -o /opt/appd/php-agent/installVars https://raw.githubusercontent.com/vtlevin/cloudcenter/master/installVars
-
 #sudo mkdir -p /opt/appd/php-agent
 sudo mkdir -p /opt/appd/php-agent/logs
 
