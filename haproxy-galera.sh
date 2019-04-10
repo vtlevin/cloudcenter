@@ -62,13 +62,13 @@ sudo systemctl enable haproxy
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
-agentSendLogMessage "Installing Tet Pre-reqs."
+#agentSendLogMessage "Installing Tet Pre-reqs."
 
-sudo yum -y install ipset
-sudo yum -y install unzip
+#sudo yum -y install ipset
+#sudo yum -y install unzip
 
-agentSendLogMessage "Install Tetration Agent"
+#agentSendLogMessage "Install Tetration Agent"
 # Get Tet Script
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
+#curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
 
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
