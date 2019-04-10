@@ -125,6 +125,6 @@ agentSendLogMessage "Install Tetration Agent"
 curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
 
 agentSendLogMessage "Install AppD Agent"
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-tier-php-agent.sh | sudo bash
+curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-agent.sh | sudo bash
 
 agentSendLogMessage "Install AppD Machine"
