@@ -118,8 +118,6 @@ agentSendLogMessage "App install script complete"
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
-sudo mv ~/cliqr.repo /etc/yum.repos.d/
-
 agentSendLogMessage "Install Tetration Agent"
 # Get Tet Script
 curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
@@ -129,3 +127,5 @@ chown -R apache:apache /opt/appd/php-agent
 curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-agent.sh | sudo bash
 
 agentSendLogMessage "Install AppD Machine"
+
+sudo mv ~/cliqr.repo /etc/yum.repos.d/
