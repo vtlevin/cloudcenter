@@ -14,8 +14,8 @@ APPD_CONF_TIER='APPD_CONF_TIER=App-Tier'
 #sudo mkdir -p /opt/appd/php-agent
 #sudo mkdir -p /opt/appd/php-agent/logs
 
-#chown -R apache:apache /opt/appd/php-agent
-#chmod -R 755 /opt/appd/php-agent/logs
+chown -R apache:apache /opt/appd/php-agent
+chmod -R 755 /opt/appd/php-agent/logs
 #chmod +x runme.sh
 #chmod +x installVars
 
