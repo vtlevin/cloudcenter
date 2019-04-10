@@ -81,4 +81,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable siwapp-simulator
 sudo systemctl start siwapp-simulator
 
+agentSendLogMessage "Installing Java."
+sudo yum install java-1.8.0-openjdk-headless -y
+
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
