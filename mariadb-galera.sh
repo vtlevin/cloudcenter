@@ -271,7 +271,7 @@ curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_in
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
-agentSendLogMessage "Install AppD MYSQL-Agent"
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-mysql-agent.sh | sudo bash
+#agentSendLogMessage "Install AppD MYSQL-Agent"
+#curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-mysql-agent.sh | sudo bash
 
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
