@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash -x
+
+agentSendLogMessage "Install AppD PHP-Agent"
 
 APPD_PHP_PATH='APPD_PHP_PATH=/opt/remi/php56/root/bin'
 APPD_CONF_ACCOUNT_NAME='APPD_CONF_ACCOUNT_NAME=dangerous2019031501233911'
@@ -25,3 +27,5 @@ sudo /opt/appd/php-agent/$APPD_PHP_PATH $APPD_CONF_ACCOUNT_NAME $APPD_CONF_ACCES
 
 sudo systemctl stop httpd
 sudo systemctl start httpd
+
+agentSendLogMessage "App install script complete"
