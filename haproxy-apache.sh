@@ -63,6 +63,8 @@ IFS=${temp_ifs}
 sudo systemctl start haproxy
 sudo systemctl enable haproxy
 
+echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/hosts
+
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
