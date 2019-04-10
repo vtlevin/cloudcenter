@@ -30,7 +30,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 SCRIPT_VERSION=1.0
 LOG_FILE=
-SKIP_IPV6=0
+SKIP_IPV6=1
 DO_PRECHECK=1
 NO_INSTALL=0
 DISTRO=
