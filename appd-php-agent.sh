@@ -20,5 +20,3 @@ sudo /opt/appd/php-agent/runme.sh
 
 sudo systemctl stop httpd
 sudo systemctl start httpd
-
-agentSendLogMessage "App install script complete"
