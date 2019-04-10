@@ -68,4 +68,8 @@ echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/ho
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
+agentSendLogMessage "Install Tetration Agent"
+# Get Tet Script
+curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
+
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
