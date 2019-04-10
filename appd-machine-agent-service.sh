@@ -2,6 +2,8 @@
 
 agentSendLogMessage "Installing Appd Machine-Agent."
 
+sudo su -c "echo $'
+
 [Unit]
 Description=AppDynamics Machine Agent
 
@@ -52,6 +54,8 @@ ExecStart=/bin/sh -c "\"/opt/appd/machine-agent//bin/machine-agent\" -d -p ${PID
 # Start the AppDynamics machine agent service during the setup for a
 # non-graphical multi-user system.
 WantedBy=multi-user.target
+>> /etc/systemd/system/appdynamics-machine-agent.service
+" 
 
 systemctl enable appdynamics-machine-agent
 systemctl start appdynamics-machine-agent
