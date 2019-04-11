@@ -263,13 +263,12 @@ agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
 agentSendLogMessage "Install AppD MYSQL-Agent"
-sudo curl -o /usr/lib/jvm/appd-mysql-agent.sh https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-mysql-agent.sh | sudo bash
-sudo chmod 775 appd-mysql-agent.sh
-chkconfig --add db-agent 
-chkconfig --level 2345 db-agent on
+sudo curl -o /ect/init.d/appd-mysql-agent.sh https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-mysql-agent.sh | sudo bash
+sudo chmod 775 /ect/init.d/appd-mysql-agent.sh
+sudo chkconfig --add appd-mysql-agent.sh 
+sudo chkconfig --level 2345 appd-mysql-agent.sh on
 
-systemctl enable appd-mysql-agent
-systemctl start appd-mysql-agent
+sudo /ect/init.d/appd-mysql-agent.sh start
 
 agentSendLogMessage "Installing Tet Pre-reqs."
 sudo yum -y install ipset
