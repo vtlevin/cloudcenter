@@ -264,7 +264,7 @@ sudo yum install java-1.8.0-openjdk-headless -y
 
 agentSendLogMessage "Install AppD MYSQL-Agent"
 # Get service file
-sudo curl -o /usr/share/systemd/appd-mysql-agent.service.sh https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-mysql-agent-service.sh
+sudo curl -o /usr/share/systemd/appd-mysql-agent-service.sh https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-mysql-agent-service.sh
 
 sudo su -c "echo $'
 [Unit]
