@@ -18,8 +18,8 @@ Description=AppDynamics Machine Agent
 
 Type=simple
 
-Environment=MACHINE_AGENT_HOME=/opt/appdynamics/machine-agent
-Environment=JAVA_HOME=/opt/appdynamics/machine-agent/jre
+Environment=MACHINE_AGENT_HOME=/opt/appd/machine-agent
+Environment=JAVA_HOME=/opt/appd/machine-agent/jre
 
 # Specify agent system properties for systemd here by setting or editing JAVA_OPTS, e.g.,
 #Environment="JAVA_OPTS=-D<sys-property1>=<value1> -D<sys-property2>=<value2>"
@@ -48,7 +48,7 @@ PermissionsStartOnly=true
 ExecStartPre=/usr/bin/install -o $MACHINE_AGENT_USER -d $PIDDIR
 
 # This specifies the command line to use
-ExecStart=/bin/sh -c "\"/opt/appd/machine-agent//bin/machine-agent\" -d -p ${PIDFILE}"
+ExecStart=/bin/sh -c "\"/opt/appd/machine-agent/bin/machine-agent\" -d -p ${PIDFILE}"
 
 [Install]
 # Start the AppDynamics machine agent service during the setup for a
