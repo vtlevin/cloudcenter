@@ -86,14 +86,6 @@ echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/ho
 agentSendLogMessage "Installing Java"
 sudo yum install java-1.8.0-openjdk-headless -y
 
-agentSendLogMessage "Installing Appd PYTHON AGENT"
-sudo systemctl stop siwapp-simulator
-sudo /usr/share/venv/bin/pip install appdynamics
-sudo curl -o /etc/appdynamics.cfg https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appdynamics.cfg
-sudo systemctl daemon-reload
-sudo systemctl start siwapp-simulator
-#add to service pyagent -c /etc/appdynamics.cfg --
-
 agentSendLogMessage "Installing Tet Pre-reqs."
 
 sudo yum -y install ipset
