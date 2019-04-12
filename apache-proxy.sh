@@ -73,8 +73,8 @@ done
 # Set internal separator back to original.
 IFS=${temp_ifs}
 
-sudo systemctl enable haproxy
-sudo systemctl start haproxy
+sudo systemctl enable httpd
+sudo systemctl start httpd
 
 echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/hosts    
 
