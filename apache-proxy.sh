@@ -65,7 +65,7 @@ ipArr=(${CliqrTier_siwapp_app_PUBLIC_IP}) # Array of IPs in my tier.
 # Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
 host_index=0
 for host in $CliqrTier_siwapp_app_HOSTNAME ; do
- sudo su -c "echo 'BalancerMember http://${host} ${ipArr[${host_index}]}:8443 check cookie ${host} inter 5s' >> /etc/httpd/conf/httpd.conf"
+ sudo su -c "echo 'BalancerMember http://${ipArr[${host_index}]}:8443' >> /etc/httpd/conf/httpd.conf"
     sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
     let host_index=${host_index}+1
 done
