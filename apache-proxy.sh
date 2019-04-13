@@ -50,21 +50,16 @@ ProxyPassReverse / balancer://cluster/
 # Set internal separator to ',' since they're comma-delimited lists.
 temp_ifs=${IFS}
 IFS=','
-ipArr=(${CliqrTier_siwapp_app_PUBLIC_IP}) # Array of IPs in my tier.
+#ipArr=(${CliqrTier_siwapp_app_PUBLIC_IP}) # Array of IPs in my tier.
+ipArr=($CliqrTier_siwapp_app_IP})
 
 # Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
 host_index=0
 for host in $CliqrTier_siwapp_app_HOSTNAME ; do
-    #sed '/<Proxy balancer:\/\/cluster>/a BalancerMember http://'${ipArr[${host_index}]}':8443' /etc/httpd/conf/httpd.conf
+    sudo su -c echo '${ipArr[${host_index}]' | sed '/<Proxy balancer:\/\/cluster>/a BalancerMember http://${ipArr[${host_index}]:8443' /etc/httpd/conf/httpd.conf
     sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
     let host_index=${host_index}+1
 done
-
-for i in $(echo '$CliqrTier_siwapp_app_PUBLIC_IP' | sed '/<Proxy balancer:\/\/cluster>/a BalancerMember http://'${CliqrTier_siwapp_app_PUBLIC_IP}':8443' /etc/httpd/conf/httpd.conf)
-do
-    # call your procedure/other scripts here below
-    echo "$i"
-done    
 
 # Set internal separator back to original.
 IFS=${temp_ifs}
