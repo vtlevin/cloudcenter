@@ -46,6 +46,9 @@ ProxyPass / balancer://cluster/
 ProxyPassReverse / balancer://cluster/
 </VirtualHost>
 
+LoadModule substitute_module modules/mod_substitute.so
+LoadModule filter_module modules/mod_filter.so
+
 " >> /etc/httpd/conf/httpd.conf'
 
 # Set internal separator to ',' since they're comma-delimited lists.
