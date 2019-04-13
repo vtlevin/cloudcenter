@@ -38,21 +38,11 @@ LoadModule lbmethod_byrequests_module modules/mod_lbmethod_byrequests.so
 LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
 
 <VirtualHost *:80>
-
 <Proxy balancer://cluster>
-
-BalancerMember http://192.168.1.110:8080/test
-BalancerMember http://192.168.1.120:8080/test
-BalancerMember http://192.168.1.130:8080/test
-
 </Proxy>
-
 ProxyPreserveHost On
-
 ProxyPass / balancer://cluster/
-
 ProxyPassReverse / balancer://cluster/
-
 </VirtualHost>
 
 " >> /etc/httpd/conf/httpd.conf'
@@ -65,7 +55,8 @@ ipArr=(${CliqrTier_siwapp_app_PUBLIC_IP}) # Array of IPs in my tier.
 # Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
 host_index=0
 for host in $CliqrTier_siwapp_app_HOSTNAME ; do
- sudo su -c "echo 'BalancerMember http://${ipArr[${host_index}]}:8443' >> /etc/httpd/conf/httpd.conf"
+    sed -e "/<Proxy balancer://cluster>/a\\'BalancerMember http://${ipArr[${host_index}]}:8443'" < /etc/httpd/conf/httpd.conf
+    #sudo su -c "echo 'BalancerMember http://${ipArr[${host_index}]}:8443' >> /etc/httpd/conf/httpd.conf"
     sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
     let host_index=${host_index}+1
 done
