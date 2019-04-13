@@ -69,8 +69,11 @@ sudo systemctl start httpd
 
 echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/hosts    
 
-agentSendLogMessage "Installing Java."
+agentSendLogMessage "Installing Java"
 sudo yum install java-1.8.0-openjdk-headless -y
+
+agentSendLogMessage "Installing EUM"
+sudo curl -o /etc/httpd/conf.d/adrum.conf https://raw.githubusercontent.com/vtlevin/cloudcenter/master/adrum.conf
 
 agentSendLogMessage "Installing Tet Pre-reqs."
 
