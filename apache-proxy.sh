@@ -36,18 +36,21 @@ LoadModule proxy_module modules/mod_proxy.so
 LoadModule proxy_http_module modules/mod_proxy_h
 LoadModule lbmethod_byrequests_module modules/mod_lbmethod_byrequests.so
 LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
+LoadModule proxy_connect_module modules/mod_proxy_connect.so
+LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
+LoadModule substitute_module modules/mod_substitute.so
+LoadModule filter_module modules/mod_filter.so
 
 <VirtualHost *:80>
+
+Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+
 <Proxy balancer://cluster>
 
 </Proxy>
-ProxyPreserveHost On
-ProxyPass / balancer://cluster/
+ProxyPass / balancer://cluster/ stickysession=ROUTEID
 ProxyPassReverse / balancer://cluster/
 </VirtualHost>
-
-LoadModule substitute_module modules/mod_substitute.so
-LoadModule filter_module modules/mod_filter.so
 
 " >> /etc/httpd/conf/httpd.conf'
 
