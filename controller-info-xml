@@ -60,5 +60,9 @@
     This account-access-key must be encrypted if 'use-encrypted-credentials' is set to true  -->
 
     <account-access-key>xhibem365na4</account-access-key>
-
+    
+    <machine-path></machine-path>
+    <application-name>SIWAPP-HYBRID</application-name>
+    <tier-name>App-Tier</tier-name>
+    
 </controller-info>
