@@ -23,6 +23,8 @@ fi
 
 # agentSendLogMessage $(env)
 
+agentSendLogMessage "Installing MariaDB"
+
 sudo su -c "cat <<EOF > /etc/yum.repos.d/MariaDB.repo
 [mariadb]
 name = MariaDB
