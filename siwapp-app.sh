@@ -122,7 +122,7 @@ agentSendLogMessage "Install AppD PHP-Agent"
 curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-agent.sh | sudo bash
 
 agentSendLogMessage "Install AppD MACHINE-Agent"
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-machine-agent.sh | sudo bash
+curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-machine-agent.sh | sudo bash
 
 agentSendLogMessage "Installing Tet Pre-reqs."
 
