@@ -128,7 +128,6 @@ echo ${my_addr}
 
 IFS=${temp_ifs}
 
-
 # MYSQL Config Settings
 sudo su -c "cat << EOF > /etc/my.cnf.d/server.cnf
 [mysql]
@@ -152,7 +151,6 @@ bind-address                   = 0.0.0.0
 collation-server               = utf8_unicode_ci 
 init-connect                   = 'SET NAMES utf8'
 character-set-server           = utf8
-
 
 # MyISAM #
 key-buffer-size                = 32M
@@ -196,7 +194,6 @@ innodb-file-per-table          = 1
 # Need to re-evaluate when DB size grows
 innodb-buffer-pool-size        = 1456M
 innodb_file_format             = Barracuda
-
 
 # LOGGING #
 log-error                      = /dev/stdout
