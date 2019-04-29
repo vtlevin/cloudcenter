@@ -1,5 +1,5 @@
 #!/bin/bash -x
-#exec > >(tee -a /var/tmp/haproxy-apache-node-init_$$.log) 2>&1
+exec > >(tee -a /var/tmp/haproxy-apache-node-init_$$.log) 2>&1
 
 . /usr/local/osmosix/etc/.osmosix.sh
 . /usr/local/osmosix/etc/userenv
