@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#exec > >(tee -a /var/tmp/load-simulator-node-init_$$.log) 2>&1
+exec > >(tee -a /var/tmp/load-simulator-node-init_$$.log) 2>&1
 
 . /usr/local/osmosix/etc/.osmosix.sh
 . /usr/local/osmosix/etc/userenv
