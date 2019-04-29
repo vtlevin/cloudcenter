@@ -275,6 +275,7 @@ Restart=on-abort
 WantedBy=multi-user.target'\
 >> /etc/systemd/system/appd-mysql-agent.service
 " 
+
 sudo systemctl daemon-reload
 sudo systemctl enable appd-mysql-agent
 sudo systemctl start appd-mysql-agent
