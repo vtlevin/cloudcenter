@@ -94,7 +94,6 @@ GRANT ALL PRIVILEGES on *.* to siwapp@'%';
 FLUSH PRIVILEGES;
 EOF
 
-
 sudo systemctl stop mariadb
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
@@ -222,7 +221,6 @@ wsrep_node_name                = '${cliqrNodeHostname}'
 wsrep_replicate_myisam         = ON
 EOF
 "
-
 
 if [ "${master_addr}" == "${cliqrNodePrivateIp}" ]; then
     # I'm the master
