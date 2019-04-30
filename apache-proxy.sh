@@ -43,7 +43,7 @@ LoadModule filter_module modules/mod_filter.so
 
 <VirtualHost *:80>
 
-Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e\; path=/" env=BALANCER_ROUTE_CHANGED
 
 <Proxy balancer://cluster>
 
