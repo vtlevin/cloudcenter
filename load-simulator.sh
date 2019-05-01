@@ -54,8 +54,8 @@ for host in $CliqrTier_siwapp_app_HOSTNAME ; do
 done
 
 # Install virtualenv and locustio
-virtualenv /usr/share/venv
-/usr/share/venv/bin/pip install locustio lxml requests
+sudo virtualenv /usr/share/venv
+sudo /usr/share/venv/bin/pip install locustio lxml requests
 
 # Get locust file
 sudo curl -o /usr/share/systemd/siwapp-locust-file.py https://raw.githubusercontent.com/vtlevin/cloudcenter/master/siwapp-locust-file.py
