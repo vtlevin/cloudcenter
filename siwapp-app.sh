@@ -61,6 +61,7 @@ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 agentSendLogMessage "Starting app install PHP"
 ## Install PHP 7.3
 sudo yum-config-manager --enable remi-php73
+sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 #sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 #sudo yum --enablerepo=remi-php73 install php -y
 
