@@ -2,13 +2,10 @@
 
 agentSendLogMessage "Install AppD PHP-Agent"
 
-#sudo mkdir -p /opt/appd/php-agent
 sudo mkdir -p /opt/appd/php-agent/logs
 
 chown -R apache:apache /opt/appd/php-agent
 chmod -R 755 /opt/appd/php-agent/logs
-#chmod +x runme.sh
-#chmod +x installVars
 
 echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/hosts
 
