@@ -63,7 +63,7 @@ ipArr=(${CliqrTier_siwapp_app_PUBLIC_IP}) # Array of IPs in my tier.
 host_index=0
 for host in $CliqrTier_siwapp_app_HOSTNAME ; do
     sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
-    sudo sed -i '/<Proxy balancer:\/\/cluster>/a BalancerMember http://'${ipArr[${host_index}]}':8443' /etc/httpd/conf/httpd.conf
+    sudo sed -i '/<Proxy balancer:\/\/cluster>/a BalancerMember http://'${ipArr[${host_index}]}':8443 route='${ipArr[${host_index}]}'' /etc/httpd/conf/httpd.conf
     let host_index=${host_index}+1
 done
 
