@@ -77,7 +77,8 @@ sudo yum -y update
 
 sudo yum clean all
 
-sudo git clone https://github.com/siwapp/siwapp-sf1.git /var/www/html/
+#sudo git clone https://github.com/siwapp/siwapp-sf1.git /var/www/html/
+sudo git clone https://github.com/siwapp/siwapp.git /var/www/html/
 
 sudo mkdir /var/www/html/cache
 sudo chmod 777 /var/www/html/cache
