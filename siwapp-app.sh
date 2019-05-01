@@ -131,6 +131,7 @@ sudo yum -y install unzip
 
 agentSendLogMessage "Install Tetration Agent"
 # Get Tet Script
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
+#curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/instant-pov_installer_enforcer_linux.sh | sudo bash
+curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/sales5-tetration_installer_enforcer_linux.sh | sudo bash
 
 sudo mv ~/cliqr.repo /etc/yum.repos.d/
