@@ -134,11 +134,11 @@ agentSendLogMessage "App install script complete"
 agentSendLogMessage "Installing Java."
 sudo yum install java-1.8.0-openjdk-headless -y
 
-agentSendLogMessage "Install AppD PHP-Agent"
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-agent.sh | sudo bash
+#agentSendLogMessage "Install AppD PHP-Agent"
+#curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-agent.sh | sudo bash
 
-agentSendLogMessage "Install AppD MACHINE-Agent"
-curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-machine-agent.sh | sudo bash
+#agentSendLogMessage "Install AppD MACHINE-Agent"
+#curl https://raw.githubusercontent.com/vtlevin/cloudcenter/master/appd-php-machine-agent.sh | sudo bash
 
 agentSendLogMessage "Installing Tet Pre-reqs."
 
