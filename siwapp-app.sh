@@ -52,6 +52,8 @@ agentSendLogMessage "Starting app install script"
 #sudo yum -y update
 #sudo yum -y install git httpd php php-mysql php-xml php-mbstring
 
+sudo yum -y install git
+
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 
