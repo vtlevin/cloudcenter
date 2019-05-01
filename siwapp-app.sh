@@ -48,15 +48,31 @@ IFS=${temp_ifs}
 sudo mv /etc/yum.repos.d/cliqr.repo ~
 
 agentSendLogMessage "Starting app install script"
+
 #sudo yum -y update
 #sudo yum -y install git httpd php php-mysql php-xml php-mbstring
+
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+
+#remi phhp56 epel
+#sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+## Install PHP 7.3
+sudo yum-config-manager --enable remi-php73
+#sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+#sudo yum --enablerepo=remi-php73 install php -y
+
 sudo yum -y install yum-utils
 sudo yum -y update
 #sudo yum-config-manager --enable remi-php56
 #sudo yum -y install git httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-xml php-mbstring
-sudo yum -y install git httpd php56 php56-php php56-php-mysqlnd php56-php-gd php56-php-mcrypt php56-php-mbstring php56-php-xml php56-php-cli php56-php-ldap php56-php-zip php56-php-fileinfo
+
+#sudo yum -y install git httpd php56 php56-php php56-php-mysqlnd php56-php-gd php56-php-mcrypt php56-php-mbstring php56-php-xml php56-php-cli php56-php-ldap php56-php-zip php56-php-fileinfo
+
+#PHP Modules
+sudo yum install httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-xml php-mbstr -y
+
 sudo yum clean all
 
 sudo git clone https://github.com/siwapp/siwapp-sf1.git /var/www/html/
