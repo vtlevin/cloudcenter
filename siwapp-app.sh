@@ -59,7 +59,7 @@ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 ## Install PHP 5.4
 #sudo yum install httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-xml php-mbstr -y
 
-#agentSendLogMessage "Starting app install PHP5.6"
+agentSendLogMessage "Starting app install PHP5.6"
 ## Install PHP 5.6
 sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 #sudo yum-config-manager --enable remi-php56
