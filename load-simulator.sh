@@ -25,18 +25,19 @@ then
     CliqrTier_siwapp_mariadb_PUBLIC_IP=$CliqrTier_siwapp_mariadb_IP
     CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
     CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
-    CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
+    #CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
+    CliqrTier_siwapp_apacheproxy_app_PUBLIC_IP=$CliqrTier_siwapp_apacheproxy_app_IP
     cliqrNodePublicIp=$cliqrNodePrivateIp
 fi
 
 # Set internal separator to ',' since they're comma-delimited lists.
 temp_ifs=${IFS}
 IFS=','
-ipArr=(${CliqrTier_siwapp_haproxy_app_PUBLIC_IP}) # Array of IPs in my tier.
+ipArr=(${CliqrTier_siwapp_apacheproxy_app_PUBLIC_IP}) # Array of IPs in my tier.
 
 # Iterate through list of hosts to add hosts and corresponding IPs to haproxy config file.
 host_index=0
-for host in $CliqrTier_siwapp_haproxy_app_HOSTNAME ; do
+for host in $CliqrTier_siwapp_apacheproxy_app_HOSTNAME ; do
     sudo su -c "echo '${ipArr[${host_index}]} ${host}' >> /etc/hosts"
     let host_index=${host_index}+1
 done
