@@ -14,8 +14,8 @@ ERR=0
 
 # This command errored out LOCUST_COUNT = 10
 
-# Keep checking for haproxy to give proper 401 return to login
-until [ "$(curl --write-out %{http_code} --silent --output /dev/null ${CliqrTier_siwapp_haproxy_app_IP})" -eq "401" ]; do
+# Keep checking for apache to give proper 401 return to login
+until [ "$(curl --write-out %{http_code} --silent --output /dev/null ${CliqrTier_siwapp_apacheproxy_app_IP})" -eq "401" ]; do
     sleep ${SLEEP_TIME}
     let "COUNT++"
     echo ${COUNT}
@@ -25,11 +25,11 @@ until [ "$(curl --write-out %{http_code} --silent --output /dev/null ${CliqrTier
     fi
 done
 if [ ${ERR} -ne 0 ]; then
-    echo "Failed to get proper response from haproxy, so guessing something is wrong."
+    echo "Failed to get proper response from apache, so guessing something is wrong."
     exit 1
 fi
 
-nohup /usr/share/venv/bin/python /usr/share/venv/bin/locust --locustfile=/usr/share/systemd/siwapp-locust-file.py --host=http://${CliqrTier_siwapp_haproxy_app_IP} &>/dev/null &
+nohup /usr/share/venv/bin/python /usr/share/venv/bin/locust --locustfile=/usr/share/systemd/siwapp-locust-file.py --host=http://${CliqrTier_siwapp_apacheproxy_app_IP} &>/dev/null &
 sleep 5
 nohup curl -X POST -F "locust_count=10" -F "hatch_rate=10" http://localhost:8089/swarm &>/dev/null &
 while :
