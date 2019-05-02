@@ -78,6 +78,9 @@ sudo yum install java-1.8.0-openjdk-headless -y
 agentSendLogMessage "Installing EUM"
 sudo curl -o /etc/httpd/conf.d/adrum.conf https://raw.githubusercontent.com/vtlevin/cloudcenter/master/adrum.conf
 
+sudo systemctl enable httpd
+sudo systemctl start httpd
+
 agentSendLogMessage "Installing Tet Pre-reqs."
 
 sudo yum -y install ipset
