@@ -56,21 +56,22 @@ sudo yum -y install git
 
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-agentSendLogMessage "Starting app install PHP5.6"
-## Install PHP 5.6
-#remi phhp56 epel
-sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-sudo yum-config-manager --enable remi-php56
-#PHP Modules
-sudo yum -y install git httpd php56 php56-php php56-php-mysqlnd php56-php-gd php56-php-mcrypt php56-php-mbstring php56-php-xml php56-php-cli php56-php-ldap php56-php-zip php56-php-fileinfo
-
-#agentSendLogMessage "Starting app install PHP7.1"
-## Install PHP 7.1
-#sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-#sudo yum-config-manager --enable remi-php71
-#PHP Modules
+## Install PHP 5.4
 #sudo yum install httpd php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-xml php-mbstr -y
-#sudo yum -y install git httpd php71 php71-php php71-php-mysqlnd php71-php-gd php71-php-mcrypt php71-php-mbstring php71-php-xml php71-php-cli php71-php-ldap php71-php-zip php71-php-fileinfo
+
+#agentSendLogMessage "Starting app install PHP5.6"
+## Install PHP 5.6
+#sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+#sudo yum-config-manager --enable remi-php56
+#PHP Modules
+#sudo yum -y install git httpd php56 php56-php php56-php-mysqlnd php56-php-gd php56-php-mcrypt php56-php-mbstring php56-php-xml php56-php-cli php56-php-ldap php56-php-zip php56-php-fileinfo
+
+agentSendLogMessage "Starting app install PHP7.3"
+# Install PHP 7.3
+sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sudo yum-config-manager --enable remi-php73
+#PHP Modules
+#sudo yum -y install git httpd php73 php73-php php73-php-mysqlnd php73-php-gd php73-php-mcrypt php73-php-mbstring php73-php-xml php73-php-cli php73-php-ldap php73-php-zip php73-php-fileinfo
 
 sudo yum -y update
 
