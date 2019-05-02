@@ -9,7 +9,7 @@ chmod -R 755 /opt/appd/php-agent/logs
 
 echo "198.169.195.125 dangerous2019031501233911.saas.appdynamics.com" >> /etc/hosts
 
-sudo /opt/appd/php-agent/runme.sh
+sudo bash -x /opt/appd/php-agent/runme.sh
 
 sudo systemctl stop httpd
 sudo systemctl start httpd
