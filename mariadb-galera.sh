@@ -18,7 +18,7 @@ then
     CliqrTier_siwapp_app_PUBLIC_IP=$CliqrTier_siwapp_app_IP
     CliqrTier_siwapp_load_simulator_PUBLIC_IP=$CliqrTier_siwapp_load_simulator_IP
     #CliqrTier_siwapp_haproxy_app_PUBLIC_IP=$CliqrTier_siwapp_haproxy_app_IP
-    CliqrTier_siwapp_apache_app_PUBLIC_IP=$CliqrTier_siwapp_apache_app_IP
+    CliqrTier_siwapp_apacheproxy_app_PUBLIC_IP=$CliqrTier_siwapp_apacheproxy_app_IP
     cliqrNodePublicIp=$cliqrNodePrivateIp
 fi
 
