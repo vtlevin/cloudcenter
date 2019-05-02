@@ -15,4 +15,4 @@ for host in $cliqrNodeHostname; do
     sudo sed -i '/\<tier-name\>App-Tier\<\/tier-name\>/a \<node-name\>'${host}'\<\/node-name\>' /opt/appdynamics/machine-agent/conf/controller-info.xml
 done   
   
-systemctl restart appdynamics-machine
+systemctl restart appdynamics-machine-agent
