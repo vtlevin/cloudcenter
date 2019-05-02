@@ -61,19 +61,20 @@ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 
 #agentSendLogMessage "Starting app install PHP5.6"
 ## Install PHP 5.6
-#sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-#sudo yum-config-manager --enable remi-php56
-#PHP Modules
-#sudo yum -y install git httpd php56 php56-php php56-php-mysqlnd php56-php-gd php56-php-mcrypt php56-php-mbstring php56-php-xml php56-php-cli php56-php-ldap php56-php-zip php56-php-fileinfo
-
-agentSendLogMessage "Starting app install PHP7.3"
-# Install PHP 7.3
 sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+#sudo yum-config-manager --enable remi-php56
+yum --enablerepo=remi-php56 install php -y
+# Install PHP Modules
+sudo yum -y install git httpd php56 php56-php php56-php-mysqlnd php56-php-gd php56-php-mcrypt php56-php-mbstring php56-php-xml php56-php-cli php56-php-ldap php56-php-zip php56-php-fileinfo
+
+#agentSendLogMessage "Starting app install PHP7.3"
+## Install PHP 7.3
+#sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 #sudo yum -y install epel-release yum-utils
 #sudo yum-config-manager --enable remi-php73
-yum --enablerepo=remi-php73 install php -y
-# Insall PHP Modules
-sudo yum -y install git httpd php73 php73-php php73-php-mysqlnd php73-php-gd php73-php-mcrypt php73-php-mbstring php73-php-xml php73-php-cli php73-php-ldap php73-php-zip php73-php-fileinfo
+#yum --enablerepo=remi-php73 install php -y
+## Insall PHP Modules
+#sudo yum -y install git httpd php73 php73-php php73-php-mysqlnd php73-php-gd php73-php-mcrypt php73-php-mbstring php73-php-xml php73-php-cli php73-php-ldap php73-php-zip php73-php-fileinfo
 
 sudo yum -y update
 
@@ -81,6 +82,7 @@ sudo yum clean all
 
 sudo git clone https://github.com/siwapp/siwapp-sf1.git /var/www/html/
 #sudo git clone https://github.com/siwapp/siwapp.git /var/www/html/
+https://github.com/siwapp/siwapp-sf1.git
 
 sudo mkdir /var/www/html/cache
 sudo chmod 777 /var/www/html/cache
